@@ -1,0 +1,44 @@
+name: Deploy to Local Machine
+
+on:
+  push:
+    branches: [ main ]
+  # или для тестирования можно использовать pull_request:
+  # pull_request:
+  #   branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Указываем что используем self-hosted runner
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install dependencies
+      run: |
+        echo "Installing dependencies..."
+        # Здесь команды для установки зависимостей
+        # Например для Node.js:
+        # npm install
+        # Или для Python:
+        # pip install -r requirements.txt
+        
+    - name: Build project
+      run: |
+        echo "Building project..."
+        # Здесь команды для сборки проекта
+        # Например для Node.js:
+        # npm run build
+        
+    - name: Deploy to local
+      run: |
+        echo "Deploying to local machine..."
+        # Здесь команды для деплоя на вашу локальную машину
+        # Например:
+        # sudo systemctl restart your-service
+        # или копирование файлов:
+        # cp -r ./dist /var/www/your-app
+        
+        # Можно также использовать скрипты из вашего репозитория
+        # ./scripts/deploy.sh
