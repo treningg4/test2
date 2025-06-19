@@ -38,7 +38,7 @@ jobs:
         # Например:
         # sudo systemctl restart your-service
         # или копирование файлов:
-         cp -r ./dist /var/www/your-app
+         cp -r ./workflows /var/www/your-app
         
         # Можно также использовать скрипты из вашего репозитория
         # ./scripts/deploy.sh
